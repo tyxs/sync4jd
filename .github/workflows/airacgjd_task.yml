@@ -1,7 +1,7 @@
 name: airacg-jdtask
 on:
   schedule:
-    - cron: '1 */2 * * *'
+    - cron: '21 0-23/2 * * *'
   workflow_dispatch:
   watch:
     types: started
