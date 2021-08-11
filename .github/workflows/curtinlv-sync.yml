@@ -1,4 +1,4 @@
-name: CloudMusic-LevelUp
+name: curtinlv-sync
 on:
   schedule:
     - cron: '8 0-23/3 * * *'
