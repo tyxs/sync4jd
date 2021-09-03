@@ -275,8 +275,8 @@ class JxPasture:
                     println('{}, 获得割草奖励, {}'.format(self.account, award_res['data']['prizepool']))
 
             if i + 1 <= max_times:
-                println('{}, 2s后进行第{}次割草!'.format(self.account, i + 1))
-                await asyncio.sleep(2)
+                println('{}, 3s后进行第{}次割草!'.format(self.account, i + 1))
+                await asyncio.sleep(3)
 
     async def sweep_chicken_legs(self, session, max_times=10):
         """

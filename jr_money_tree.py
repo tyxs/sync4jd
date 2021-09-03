@@ -381,7 +381,7 @@ class JrMoneyTree:
             await self.harvest(session)  # 收金果
             await self.sell(session)  # 卖金果
             await self.steal_fruit(session)  # 偷好友金果
-            await self.notify_result(session)  # 设置通知消息
+            #await self.notify_result(session)  # 设置通知消息
 
     @logger.catch
     async def run_help(self):

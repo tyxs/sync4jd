@@ -24,24 +24,6 @@ from db.model import Code
 __all__ = ('process_start', 'get_code_list')
 
 
-def validate(**kwargs):
-    """
-    :param kwargs:
-    :return:
-    """
-    try:
-        if platform.machine() == 'aarch64':
-            from .libjdbitmapkit_arm import validate
-        elif platform.platform().startswith('Darwin'):
-            from .libjdbitmapkit_darwin import validate
-        else:
-            from .libjdbitmapkit_x86 import validate
-
-        validate(**kwargs)
-    except Exception as e:
-        return False
-
-
 def sign(data, api_key='4ff4d7df-e07d-31a9-b746-97328ca9241d'):
     """
     :param api_key:
