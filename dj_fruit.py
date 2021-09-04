@@ -326,7 +326,7 @@ class DjFruit:
         if not data:
             return
         active_info = data['activityInfoResponse']
-        message = '【活动名称】到家果园\n【活动账号】{}\n'.format(self.account)
+        message = '【活动名称】到家果园\n【京东账号】{}\n'.format(self.account)
         message += '【奖品名称】{}\n'.format(active_info['fruitName'])
         message += '【{}进度】{}/{}\n'.format(
             active_info['stageName'],

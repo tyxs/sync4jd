@@ -3,7 +3,7 @@
 # @Time    : 2021/8/23 下午6:54
 # @Project : jd_scripts
 # @File    : jx_pasture.py
-# @Cron    : 35 6,16 * * *
+# @Cron    : 35 7,16 * * *
 # @Desc    : 京喜APP->京喜牧场->日常任务
 import json
 import random

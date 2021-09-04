@@ -180,9 +180,9 @@ def push_server(title, content):
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) '
                           'Chrome/62.0.3202.94 Safari/537.36'}
         if '【活动名称】' in content:
-            content = content.replace('【活动名称】', '# 【活动名称】')
+            content = content.replace('【活动名称】', '### 【活动名称】')
         else:
-            content = content.replace('【京东账号】', '# 【京东账号】')
+            content = content.replace('【京东账号】', '### 【京东账号】')
         payload = {'text': title, 'desp': content}
         requests.post(url, params=payload, headers=headers)
         println('\n成功推送消息到server酱!')
