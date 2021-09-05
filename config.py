@@ -67,6 +67,9 @@ JOY_PROCESS_NUM = cfg.get('joy_process_num', 1)
 # 宠汪汪喂食
 JOY_FEED_COUNT = cfg.get('joy_feed_count', 20)
 
+# 宠汪汪兑换京豆数
+JOY_EXCHANGE_COUNT = cfg.get('joy_exchange_num', 20)
+
 # JD COOKIES
 JD_COOKIES = [j for j in [{'pt_pin': re.search(r'pt_pin=(.*?);', i).group(1),
                            'pt_key': re.search(r'pt_key=(.*?);', i).group(1) if re.search('pt_key=(.*?);', str(i)) else None,
