@@ -5,7 +5,7 @@ SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 # 定时更新脚本
-40 4,23 * * * /bin/docker-entrypoint >> /dev/null  2>&1
+40 4,14,23 * * * /bin/docker-entrypoint >> /dev/null  2>&1
 
 #  检查cookies是否过期, 过期则发送通知
 0 */2 * * * /scripts/check_cookies.py >> /scripts/logs/check_cookies_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -45,6 +45,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  京东急速版APP->我的->发财大赢家
 3 */1 * * * /scripts/jd_big_winner.py >> /scripts/logs/jd_big_winner_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+# 
+50 12 * * * /scripts/jd_book_box.py >> /scripts/logs/jd_book_box_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP->搜索领现金进入
 46 */12 * * * /scripts/jd_cash.py >> /scripts/logs/jd_cash_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -136,6 +139,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  京东签到合集
 0 3,19 * * * /scripts/jd_sign.py >> /scripts/logs/jd_sign_`date "+\%Y-\%m-\%d"`.log 2>&1
 
+#  京东小魔方
+36 0 * * * /scripts/jd_small_magic_cube.py >> /scripts/logs/jd_small_magic_cube_`date "+\%Y-\%m-\%d"`.log 2>&1
+
 #  京东APP-每日特价-疯狂砸金蛋
 21 5,17 * * * /scripts/jd_smash_golden_egg.py >> /scripts/logs/jd_smash_golden_egg_`date "+\%Y-\%m-\%d"`.log 2>&1
 
@@ -144,9 +150,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  京东APP首页->京东超市->游戏
 7 7,20 * * * /scripts/jd_supermarket.py >> /scripts/logs/jd_supermarket_`date "+\%Y-\%m-\%d"`.log 2>&1
-
-#  京东APP->我的->更多工具->新品试用
-25 12 * * * /scripts/jd_try.py >> /scripts/logs/jd_try_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  取消商品关注和店铺关注
 50 23 * * * /scripts/jd_unsubscribe.py >> /scripts/logs/jd_unsubscribe_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -182,7 +185,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 45 */1 * * * /scripts/jx_factory_collect.py >> /scripts/logs/jx_factory_collect_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京喜APP->京喜牧场->日常任务
-35 6,16 * * * /scripts/jx_pasture.py >> /scripts/logs/jx_pasture_`date "+\%Y-\%m-\%d"`.log 2>&1
+35 7,16 * * * /scripts/jx_pasture.py >> /scripts/logs/jx_pasture_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京喜APP->京喜牧场->定时收金币/割草/投喂小鸡
 40 */1 * * * /scripts/jx_pasture_collect.py >> /scripts/logs/jx_pasture_collect_`date "+\%Y-\%m-\%d"`.log 2>&1
