@@ -16,7 +16,7 @@ from config import USER_AGENT
 from utils.jd_init import jd_init
 from utils.console import println
 from db.model import Code
-from utils.process import process_start, get_code_list
+from utils.process import process_start
 
 # 特务Z
 CODE_JD_SUPER_BRAND = 'jd_super_brand'
@@ -148,7 +148,6 @@ class JdSuperBrand:
         :return:
         """
         item_list = Code.get_code_list(CODE_JD_SUPER_BRAND)
-        item_list.extend(get_code_list(CODE_JD_SUPER_BRAND))
 
         for item in item_list:
             account, code = item.get('account'), item.get('code')

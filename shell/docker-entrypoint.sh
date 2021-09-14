@@ -99,8 +99,6 @@ echo "重启cron进程...";
 
 /etc/init.d/cron restart;
 
-rm -rf $CODE_DIR/sqlite.db;
-
 echo "######更新脚本执行完毕######";
 
 # 保证容器不退出

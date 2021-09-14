@@ -358,7 +358,7 @@ class DjFruit:
             await self.receive_water_bottle(session)  # 领取水瓶
             await self.receive_water_wheel(session)  # 领取水车
             await self.watering(session, batch=False, keep_water=DJ_FRUIT_KEEP_WATER)
-            await self.set_notify_message(session)
+            #await self.set_notify_message(session)
 
     async def run_help(self):
         """

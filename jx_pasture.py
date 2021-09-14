@@ -20,7 +20,7 @@ from utils.jx_init import jx_init, md5
 from utils.logger import logger
 from utils.console import println
 from utils.jx_pasture_token import get_token
-from utils.process import process_start, get_code_list
+from utils.process import process_start
 from db.model import Code
 
 
@@ -363,7 +363,6 @@ class JxPasture:
                 println('{}, 无法初始化, 退出程序!'.format(self.account))
                 return
             item_list = Code.get_code_list(code_key=CODE_JX_PASTURE)
-            item_list.extend(get_code_list(CODE_JX_PASTURE))
             for item in item_list:
                 account, code = item.get('account'), item.get('code')
                 if account == self.account:

@@ -14,7 +14,7 @@ from urllib.parse import unquote, quote
 from furl import furl
 from config import USER_AGENT
 from utils.console import println
-from utils.process import process_start, get_code_list
+from utils.process import process_start
 from utils.jd_init import jd_init
 from utils.logger import logger
 from db.model import Code
@@ -395,7 +395,6 @@ class JrMoneyTree:
                 println('{}, 登录失败, 退出程序...'.format(self.account))
                 return
             item_list = Code.get_code_list(CODE_MONEY_TREE)
-            item_list.extend(get_code_list(CODE_MONEY_TREE))
             for item in item_list:
                 friend_account, friend_code = item.get('account'), item.get('code')
                 if friend_account == self.account:

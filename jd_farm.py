@@ -17,7 +17,6 @@ from utils.console import println
 from utils.logger import logger
 from utils.jd_init import jd_init
 from config import USER_AGENT, JD_FARM_BEAN_CARD, JD_FARM_RETAIN_WATER
-from utils.process import get_code_list
 from db.model import Code
 
 # 东东农场助力码
@@ -568,7 +567,6 @@ class JdFarm:
         help_max_count = 3  # 每人每天只有三次助力机会
         cur_count = 0  # 当前已助力次数
         item_list = Code.get_code_list(CODE_JD_FARM)
-        item_list.extend(get_code_list(CODE_JD_FARM))
         for item in item_list:
             friend_account, friend_code = item.get('account'), item.get('code')
             if cur_count >= help_max_count:
