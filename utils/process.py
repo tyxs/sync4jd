@@ -4,17 +4,15 @@
 # @File    : process.py
 # @Project : jd_scripts
 # @Desc    : 多进程执行脚本
-import random
 import multiprocessing
 import asyncio
-import time
 from urllib.parse import unquote
 from utils.cookie import sync_check_cookie, ws_key_to_pt_key
 from utils.console import println
 from utils.notify import notify
 from utils.logger import logger
 from config import JD_COOKIES, PROCESS_NUM
-from db.model import Code
+from db.model import Code, CodeFlag
 
 
 __all__ = ('process_start', )
@@ -139,13 +137,9 @@ def process_start(scripts_cls, name='', process_num=None, help=True, code_key=No
         notify_message += message + '\n'
 
     if code_key:
-        timeout = random.random() * 10
-        println('正在提交助力码, 随机等待{}秒!'.format(timeout))
-        time.sleep(timeout)
         if type(code_key) == list:
             for key in code_key:
                 Code.post_code_list(key)
-                time.sleep(random.random())
         else:
             Code.post_code_list(code_key)
 
@@ -163,4 +157,10 @@ def process_start(scripts_cls, name='', process_num=None, help=True, code_key=No
 
     println('\n所有账号均执行完{}, 退出程序\n'.format(name))
 
+    if code_key:
+        if type(code_key) == list:
+            for key in code_key:
+                CodeFlag.del_pull_codes(key)
+        else:
+            CodeFlag.del_pull_codes(code_key)
 

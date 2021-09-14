@@ -6,12 +6,18 @@
 # @Desc    : model定义
 import hashlib
 import os
+import random
+import time
+
+import urllib3
 from datetime import datetime
 from functools import reduce
 
 import requests
 from peewee import *
 from config import DB_PATH, USER_AGENT
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 db = SqliteDatabase(DB_PATH)
 
@@ -55,33 +61,63 @@ class CodeFlag(Model):
 
     updated_at = DateField(verbose_name='更新日期', default=datetime.now().date())
 
+    class Meta:
+        database = db
+        table_name = 'code_flag'
+
     @classmethod
     def is_post_codes(cls, code_key=''):
         """
         是否已提交助力码
         """
-        pass
+        try:
+            res = cls.get(cls.code_key == code_key, cls.flag_type == FLAG_TYPE_POST)
+            if res and res.done:
+                return True
+            else:
+                return False
+        except Exception as e:
+            return False
 
     @classmethod
     def is_pull_codes(cls, code_key=''):
         """
         是否已拉取助力码
         """
-        pass
+        try:
+            res = cls.get(cls.code_key == code_key, cls.flag_type == FLAG_TYPE_GET)
+            if res and res.done:
+                return True
+            else:
+                return False
+        except Exception as e:
+            return False
+
+    @classmethod
+    def del_pull_codes(cls, code_key):
+        """
+        删除拉取助力码的标志位
+        """
+        try:
+            return cls.delete().where(cls.code_key == code_key)
+        except Exception as e:
+            return False
 
     @classmethod
     def set_post_codes(cls, code_key=''):
         """
         标记为已提交助力码
         """
-        pass
+        cls.insert(code_key=code_key, flag_type=FLAG_TYPE_POST, done=True,
+                   created_at=datetime.now().date()).execute()
 
     @classmethod
     def set_pull_codes(cls, code_key=''):
         """
         标记为已拉取助力码
         """
-        pass
+        cls.insert(code_key=code_key, flag_type=FLAG_TYPE_GET, done=True,
+                   created_at=datetime.now().date()).execute()
 
 
 class Code(Model):
@@ -217,13 +253,17 @@ class Code(Model):
         """
         # 今日已提交助力码
         if CodeFlag.is_post_codes(code_key):
-            return
+            print('今日已提交过该类型助力码!')
+            return False
+
+        timeout = random.random() * 10
+        print('正在提交助力码, 随机等待:{}秒...'.format(timeout))
+        time.sleep(timeout)
 
         code_list = []
         # 获取容器内部账号助力码
         item_list = cls.select().where(cls.code_key == code_key, cls.created_at == datetime.now().date(),
                                        cls.code_type == CODE_TYPE_INTERNAL).order_by(cls.sort).execute()
-
         for item in item_list:
             code_list.append({
                 'account': item.account,
@@ -257,4 +297,4 @@ class Code(Model):
             print('提交助力码失败, {}'.format(e.args))
 
 
-db.create_tables([Code])
+db.create_tables([Code, CodeFlag])
