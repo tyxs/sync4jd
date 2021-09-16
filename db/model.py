@@ -174,7 +174,7 @@ class Code(Model):
         """
         # 今日已拉取助力码, 跳过!
         if CodeFlag.is_pull_codes(code_key):
-            return
+            return []
 
         try:
             url = 'https://cqpy5frn58.execute-api.ap-east-1.amazonaws.com/production'
@@ -187,13 +187,24 @@ class Code(Model):
                 'code_key': code_key
             }
             params['sign'] = sign(params)
-            response = requests.get(url=url, json=params, timeout=20, verify=False, headers=headers)
+            response = requests.get(url=url, params=params, timeout=20, verify=False, headers=headers)
+            if response.json()['code'] == 0:
+                CodeFlag.set_pull_codes(code_key)
             items = response.json()['data']
-            CodeFlag.set_pull_codes(code_key)
+            ins_data = []
+
+            for item in items:
+                ins_data.append({
+                    'account': item['account'],
+                    'code_val': item['code'],
+                    'code_key': code_key,
+                    'code_type': CODE_TYPE_POOL,
+                })
+            cls.insert_many(ins_data).execute()
             return items
         except Exception as e:
             print('获取随机助力列表失败, {}'.format(e.args))
-            return False
+            return []
 
     @classmethod
     def get_code_list(cls, code_key=''):
@@ -228,21 +239,22 @@ class Code(Model):
                     'account': author.account,
                     'code': author.code_val,
                 })
-        except Exception:
+        except Exception as e:
             pass
 
         # 随机取助力池20个助力码
-        pool_code_list = cls.select(cls.code_type == CODE_TYPE_POOL).order_by(fn.Random()).limit(20)
-        if not pool_code_list:
-            return result
-
+        pool_code_list = cls.select().where(cls.code_type == CODE_TYPE_POOL,
+                                            cls.code_key == code_key).order_by(fn.Random()).limit(20)
+        temp = []
         for code in pool_code_list:
             if not code or not code.code_val:
                 continue
-            result.append({
+            temp.append({
                 'account': code.account,
                 'code': code.code_val,
             })
+        random.shuffle(temp)
+        result.extend(temp)
         return reduce(lambda x, y: x if y in x else x + [y], [[], ] + result)
 
     @classmethod
