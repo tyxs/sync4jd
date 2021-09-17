@@ -83,7 +83,7 @@ class JdCutePet:
         :return:
         """
         item_list = Code.get_code_list(CODE_CUT_PET)
-        item_list.extend(get_code_list(CODE_CUT_PET))
+
         for item in item_list:
             friend_account, friend_code = item.get('account'), item.get('code')
             if self.account == friend_account:

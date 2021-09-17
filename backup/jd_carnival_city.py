@@ -13,7 +13,7 @@ import urllib.parse
 import aiohttp
 
 from config import USER_AGENT
-from utils.process import process_start, get_code_list
+from utils.process import process_start
 from utils.console import println
 from utils.jd_init import jd_init
 from utils.logger import logger
@@ -263,7 +263,6 @@ class JdCarnivalCity:
         """
         async with aiohttp.ClientSession(headers=self.headers, cookies=self.cookies) as session:
             item_list = Code.get_code_list(code_key=CODE_JD_CARNIVAL_CITY)
-            item_list.extend(get_code_list(CODE_JD_CARNIVAL_CITY))
 
             for item in item_list:
                 account, code = item.get('account'), item.get('code')
