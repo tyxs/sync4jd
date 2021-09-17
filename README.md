@@ -126,9 +126,11 @@
 
 
 
+
+
 ## 脚本列表
 
-- **脚本总数: 65**
+- **脚本总数: 66**
 
 |脚本名称|脚本描述|
 |:---:|:---:|
@@ -140,7 +142,6 @@
 |dj_bean_manor_water.py| 京东APP->京东到家->签到->鲜豆庄园, 定时领水滴/浇水|
 |dj_fruit.py| 京东APP->京东到家->免费水果|
 |dj_fruit_collect.py| 京东APP->京东到家->免费水果, 定时领水滴/浇水|
-|get_jd_cookies.py| 京东APP扫码登录获取cookies|
 |jd_5g_box.py| 京东APP->营业厅->领京豆, 5G盲盒做任务抽奖|
 |jd_5g_box_collect.py|  京东APP->营业厅->领京豆, 5G盲盒每3小时收取信号值|
 |jd_amusement_post.py| 京东APP->签到领豆->边玩边赚->京小鸽游乐寄|
@@ -148,13 +149,14 @@
 |jd_bean_home.py| 京东APP->我的->签到领京豆->领额外奖励|
 |jd_bean_indiana.py| 京豆APP首页->领京豆->摇京豆->左上角京豆夺宝|
 |jd_big_winner.py| 京东急速版APP->我的->发财大赢家|
+|jd_book_box.py||
 |jd_cash.py| 京东APP->搜索领现金进入|
 |jd_collar_bean.py| 京东APP首页->领京豆->升级赚京豆|
-|jd_cool_summer.py| 清凉一夏|
 |jd_crazy_joy.py| 京东APP-签到领豆-疯狂的JOY|
 |jd_cute_pet.py| 京东APP->我的->东东萌宠|
 |jd_earn.py| 微信小程序->京东赚赚|
 |jd_earn_bean.py| 赚京豆(微信小程序)-赚京豆-签到领京豆|
+|jd_enterprise_gift.py| 京东app->我的->签到领豆->边玩边赚->企有此礼|
 |jd_factory.py| 京东APP->京东电器->东东工厂|
 |jd_factory_collect.py| 京东APP->京东电器->东东工厂, 定时收电量|
 |jd_farm.py| 京东APP-我的->东东农场|
@@ -169,20 +171,21 @@
 |jd_koi_red_packet.py| 京东APP-签到领豆-边玩边赚-玩锦鲤红包|
 |jd_lottery_bean.py| 京东APP->签到领京豆->抽京豆|
 |jd_lucky_turntable.py| 幸运大转盘, 入口忘了在哪|
+|jd_mind_make_box.py| 京东app->我的->签到领豆->边玩边赚->企有此礼|
 |jd_planting_bean.py| 京东APP->我的->签到领豆->种豆得豆|
 |jd_planting_bean_collect.py| 京东APP->我的->签到领豆->种豆得豆, 定时收取营养液|
 |jd_polite.py| 小鸽有礼|
 |jd_puzzle_sign.py| 京东APP->拼图签到合集|
 |jd_ranking_list.py| 今日王牌, 入口忘了在哪。|
-|jd_school_charging.py| 京东APP->我的->签到领豆->边玩边赚->开学充电站|
 |jd_second_coin.py| 京东APP首页->京东秒杀->立即签到->赚秒秒币|
 |jd_shark_bean.py| 京东APP->我的->签到领豆->摇京豆|
 |jd_shop.py| 京东APP首页->领京豆->进店领豆|
 |jd_sign.py| 京东签到合集|
+|jd_small_magic_cube.py| 京东小魔方|
 |jd_smash_golden_egg.py| 京东APP-每日特价-疯狂砸金蛋|
 |jd_super_brand.py| 特务Z|
+|jd_super_interactive_city.py| 超级互动城|
 |jd_supermarket.py| 京东APP首页->京东超市->游戏|
-|jd_try.py| 京东APP->我的->更多工具->新品试用|
 |jd_unsubscribe.py| 取消商品关注和店铺关注|
 |jd_wishing_pool.py| 京东APP首页->京东众筹->众筹许愿池|
 |jd_women_box.py| 女装盲盒|

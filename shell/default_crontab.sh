@@ -11,7 +11,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 0 */2 * * * /scripts/check_cookies.py >> /scripts/logs/check_cookies_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  清除日志, 默认保留三天, 可在配置中修改
-30 23 * * * /scripts/clean_log.py >> /scripts/logs/clean_log_`date "+\%Y-\%m-\%d"`.log 2>&1
+57 23 * * * /scripts/clean_log.py >> /scripts/logs/clean_log_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP->京东到家->签到->所有任务
 45 7,12,19 * * * /scripts/dj_bean.py >> /scripts/logs/dj_bean_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -55,9 +55,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  京东APP首页->领京豆->升级赚京豆
 6 1 * * * /scripts/jd_collar_bean.py >> /scripts/logs/jd_collar_bean_`date "+\%Y-\%m-\%d"`.log 2>&1
 
-#  清凉一夏
-8 8 * * * /scripts/jd_cool_summer.py >> /scripts/logs/jd_cool_summer_`date "+\%Y-\%m-\%d"`.log 2>&1
-
 #  京东APP->我的->东东萌宠
 35 6-18/6 * * * /scripts/jd_cute_pet.py >> /scripts/logs/jd_cute_pet_`date "+\%Y-\%m-\%d"`.log 2>&1
 
@@ -66,6 +63,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  赚京豆(微信小程序)-赚京豆-签到领京豆
 45 5,22 * * * /scripts/jd_earn_bean.py >> /scripts/logs/jd_earn_bean_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京东app->我的->签到领豆->边玩边赚->企有此礼
+40 8,22 15-30 * * /scripts/jd_enterprise_gift.py >> /scripts/logs/jd_enterprise_gift_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP->京东电器->东东工厂
 30 6-18/6 * * * /scripts/jd_factory.py >> /scripts/logs/jd_factory_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -109,6 +109,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  幸运大转盘, 入口忘了在哪
 10 10,23 * * * /scripts/jd_lucky_turntable.py >> /scripts/logs/jd_lucky_turntable_`date "+\%Y-\%m-\%d"`.log 2>&1
 
+#  京东app->我的->签到领豆->边玩边赚->企有此礼
+22 3,10 15-23 * * /scripts/jd_mind_make_box.py >> /scripts/logs/jd_mind_make_box_`date "+\%Y-\%m-\%d"`.log 2>&1
+
 #  京东APP->我的->签到领豆->种豆得豆
 10 3,15 * * * /scripts/jd_planting_bean.py >> /scripts/logs/jd_planting_bean_`date "+\%Y-\%m-\%d"`.log 2>&1
 
@@ -123,9 +126,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  今日王牌, 入口忘了在哪。
 21 9 * * * /scripts/jd_ranking_list.py >> /scripts/logs/jd_ranking_list_`date "+\%Y-\%m-\%d"`.log 2>&1
-
-#  京东APP->我的->签到领豆->边玩边赚->开学充电站
-1 3 * * * /scripts/jd_school_charging.py >> /scripts/logs/jd_school_charging_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP首页->京东秒杀->立即签到->赚秒秒币
 12 11 * * * /scripts/jd_second_coin.py >> /scripts/logs/jd_second_coin_`date "+\%Y-\%m-\%d"`.log 2>&1
