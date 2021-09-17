@@ -149,11 +149,9 @@ class JdFarm:
         println('{}, 今日已邀请好友{}个 / 每日邀请上限{}个'.format(self.account, invite_friend_count, invite_friend_max))
         friends = data['friends']  # 好友列表
 
-
         m_pin = await self.get_encrypted_pin(session)
 
         item_list = Code.get_code_list(CODE_JD_FARM)
-        item_list.extend(get_code_list(CODE_JD_FARM))
         for item in item_list:
             friend_account, friend_code = item.get('account'), item.get('code')
             # 自己不能邀请自己成为好友
@@ -748,7 +746,6 @@ class JdFarm:
         """
         println('{}, 开始天天抽奖--好友助力--每人每天只有三次助力机会!'.format(self.account))
         item_list = Code.get_code_list(CODE_JD_FARM)
-        item_list.extend(get_code_list(CODE_JD_FARM))
         for item in item_list:
             friend_account, friend_code = item.get('account'), item.get('code')
             if friend_account == self.account:

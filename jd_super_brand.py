@@ -141,6 +141,7 @@ class JdSuperBrand:
                 "actionType": 0}
             res = await self.request(session, 'superBrandDoTask', body)
             println('{}, 任务:{}, {}'.format(self.account, task['assignmentName'], res.get('msg')))
+            await asyncio.sleep(1)
 
     async def help_friend(self, session):
         """
@@ -217,4 +218,4 @@ class JdSuperBrand:
 
 
 if __name__ == '__main__':
-    process_start(JdSuperBrand, '特物Z')
+    process_start(JdSuperBrand, '特物Z', code_key=CODE_JD_SUPER_BRAND)
