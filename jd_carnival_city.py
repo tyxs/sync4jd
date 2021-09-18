@@ -3,8 +3,8 @@
 # @Time    : 2021/8/23 下午1:27
 # @Project : jd_scripts
 # @File    : jd_carnival_city.py
-# @Cron    : 1 1 * * *
-# @Desc    : 京东APP首页->手机->手机嗨购日->一亿京豆悬浮窗
+# @Cron    : 0 22 * * *
+# @Desc    : 京东APP首页->手机->手机嗨购日->一亿京豆悬浮窗, 10月2日结束
 import asyncio
 import json
 import time
@@ -251,7 +251,7 @@ class JdCarnivalCity:
         :return:
         """
         async with aiohttp.ClientSession(headers=self.headers, cookies=self.cookies) as session:
-            await self.get_share_code(session)
+            #await self.get_share_code(session)
             await self.do_tasks(session)
             await self.lottery(session)
 
@@ -276,4 +276,4 @@ class JdCarnivalCity:
 
 
 if __name__ == '__main__':
-    process_start(JdCarnivalCity, '手机狂欢城', code_key=CODE_JD_CARNIVAL_CITY)
+    process_start(JdCarnivalCity, '手机狂欢城', code_key=CODE_JD_CARNIVAL_CITY, help=False)
