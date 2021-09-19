@@ -144,7 +144,11 @@ def process_start(scripts_cls, name='', process_num=None, help=True, code_key=No
             Code.post_code_list(code_key)
 
     if code_key:
-        Code.pull_code_list(code_key=code_key)
+        if type(code_key) == list:
+            for key in code_key:
+                Code.pull_code_list(key)
+        else:
+            Code.pull_code_list(code_key)
 
     if hasattr(scripts_cls, 'run_help') and help:
         pool = multiprocessing.Pool(process_count)  # 进程池
