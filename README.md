@@ -128,9 +128,11 @@
 
 
 
+
+
 ## 脚本列表
 
-- **脚本总数: 66**
+- **脚本总数: 70**
 
 |脚本名称|脚本描述|
 |:---:|:---:|
@@ -142,6 +144,7 @@
 |dj_bean_manor_water.py| 京东APP->京东到家->签到->鲜豆庄园, 定时领水滴/浇水|
 |dj_fruit.py| 京东APP->京东到家->免费水果|
 |dj_fruit_collect.py| 京东APP->京东到家->免费水果, 定时领水滴/浇水|
+|dj_notification.py| 京东到家活动通知|
 |jd_5g_box.py| 京东APP->营业厅->领京豆, 5G盲盒做任务抽奖|
 |jd_5g_box_collect.py|  京东APP->营业厅->领京豆, 5G盲盒每3小时收取信号值|
 |jd_amusement_post.py| 京东APP->签到领豆->边玩边赚->京小鸽游乐寄|
@@ -149,7 +152,9 @@
 |jd_bean_home.py| 京东APP->我的->签到领京豆->领额外奖励|
 |jd_bean_indiana.py| 京豆APP首页->领京豆->摇京豆->左上角京豆夺宝|
 |jd_big_winner.py| 京东急速版APP->我的->发财大赢家|
-|jd_book_box.py||
+|jd_car.py| 京东汽车|
+|jd_car_exchange.py| 京东汽车兑换|
+|jd_carnival_city.py| 京东APP首页->手机->手机嗨购日->一亿京豆悬浮窗, 10月2日结束|
 |jd_cash.py| 京东APP->搜索领现金进入|
 |jd_collar_bean.py| 京东APP首页->领京豆->升级赚京豆|
 |jd_crazy_joy.py| 京东APP-签到领豆-疯狂的JOY|
@@ -172,6 +177,7 @@
 |jd_lottery_bean.py| 京东APP->签到领京豆->抽京豆|
 |jd_lucky_turntable.py| 幸运大转盘, 入口忘了在哪|
 |jd_mind_make_box.py| 京东app->我的->签到领豆->边玩边赚->企有此礼|
+|jd_notification.py| 京东活动通知|
 |jd_planting_bean.py| 京东APP->我的->签到领豆->种豆得豆|
 |jd_planting_bean_collect.py| 京东APP->我的->签到领豆->种豆得豆, 定时收取营养液|
 |jd_polite.py| 小鸽有礼|

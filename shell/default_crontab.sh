@@ -28,6 +28,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  京东APP->京东到家->免费水果, 定时领水滴/浇水
 42 */1 * * * /scripts/dj_fruit_collect.py >> /scripts/logs/dj_fruit_collect_`date "+\%Y-\%m-\%d"`.log 2>&1
 
+#  京东到家活动通知
+25 10,18 * * * /scripts/dj_notification.py >> /scripts/logs/dj_notification_`date "+\%Y-\%m-\%d"`.log 2>&1
+
 #  京东APP->营业厅->领京豆, 5G盲盒做任务抽奖
 8 0 * * * /scripts/jd_5g_box.py >> /scripts/logs/jd_5g_box_`date "+\%Y-\%m-\%d"`.log 2>&1
 
@@ -46,8 +49,14 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  京东急速版APP->我的->发财大赢家
 3 */1 * * * /scripts/jd_big_winner.py >> /scripts/logs/jd_big_winner_`date "+\%Y-\%m-\%d"`.log 2>&1
 
-# 
-50 12 * * * /scripts/jd_book_box.py >> /scripts/logs/jd_book_box_`date "+\%Y-\%m-\%d"`.log 2>&1
+#  京东汽车
+10 7 * * * /scripts/jd_car.py >> /scripts/logs/jd_car_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京东汽车兑换
+0 0 * * * /scripts/jd_car_exchange.py >> /scripts/logs/jd_car_exchange_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京东APP首页->手机->手机嗨购日->一亿京豆悬浮窗, 10月2日结束
+0 22 * * * /scripts/jd_carnival_city.py >> /scripts/logs/jd_carnival_city_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP->搜索领现金进入
 46 */12 * * * /scripts/jd_cash.py >> /scripts/logs/jd_cash_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -111,6 +120,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  京东app->我的->签到领豆->边玩边赚->企有此礼
 22 3,10 15-23 * * /scripts/jd_mind_make_box.py >> /scripts/logs/jd_mind_make_box_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京东活动通知
+30 9,19 * * * /scripts/jd_notification.py >> /scripts/logs/jd_notification_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京东APP->我的->签到领豆->种豆得豆
 10 3,15 * * * /scripts/jd_planting_bean.py >> /scripts/logs/jd_planting_bean_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -188,5 +200,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 35 7,16 * * * /scripts/jx_pasture.py >> /scripts/logs/jx_pasture_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  京喜APP->京喜牧场->定时收金币/割草/投喂小鸡
-40 */1 * * * /scripts/jx_pasture_collect.py >> /scripts/logs/jx_pasture_collect_`date "+\%Y-\%m-\%d"`.log 2>&1
+40 */2 * * * /scripts/jx_pasture_collect.py >> /scripts/logs/jx_pasture_collect_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京喜APP->首页->签到领红包
+10 10 * * * /scripts/jx_sign.py >> /scripts/logs/jx_sign_`date "+\%Y-\%m-\%d"`.log 2>&1
 
