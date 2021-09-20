@@ -9,7 +9,7 @@ import json
 import random
 import time
 from datetime import datetime
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 
 import aiohttp
 import asyncio
@@ -72,7 +72,7 @@ class JxPasture:
             if not self.phone_id:
                 self.phone_id = generate_str()
             timestamp = str(int(time.time() * 1000))
-            js_token = md5(self.account + timestamp + self.phone_id + 'tPOamqCuk9NLgVPAljUyIHcPRmKlVxDy')
+            js_token = md5(quote(self.pin) + timestamp + self.phone_id + 'tPOamqCuk9NLgVPAljUyIHcPRmKlVxDy')
             time_ = datetime.now()
             params = {
                 'channel': '7',
@@ -85,7 +85,9 @@ class JxPasture:
                 'g_login_type': '1',
                 'callback': '',
                 'g_ty': 'ls',
-                'jxmc_jstoken': js_token
+                'jxmc_jstoken': js_token,
+                'timestamp': timestamp,
+                'phoneid': self.phone_id
             }
             if not body:
                 body = dict()
