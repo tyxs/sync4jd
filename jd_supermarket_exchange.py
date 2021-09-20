@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @File         : jd_blue_coin.py
+# @File         : jd_supermarket_exchange.py
 # @Project      : jd_scripts
 # @Created Date : 2021-09-18 22:30:12
 # @Last Modified: 2021-09-19 21:32:19
