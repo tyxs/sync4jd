@@ -635,6 +635,10 @@ class JxFactory:
 
         if res.get('ret', -1) == 0:
             println('{}, 投入电量成功!'.format(self.account))
+        elif res.get('ret',-1) == 1403:
+            msg = res.get('msg')
+            println('{}, 投入电量失败!({})'.format(self.account, msg))
+            self.invalid_reason = msg
         else:
             println('{}, 投入电量失败!'.format(self.account))
 
@@ -680,7 +684,10 @@ class JxFactory:
         else:
             self.message += '【商品名称】{}\n【所需电量】{}\n【投入电量】{}\n'.format(self.production_name,
                                                                     self.need_electric, self.inserted_electric)
-            self.message += '【生成进度】{}%\n'.format(self.production_stage_progress)
+            if hasattr(self, 'invalid_reason'):
+                self.message += '【生成进度】生产已失效!请重新选择商品!\n'
+            else:
+                self.message += '【生成进度】{}%\n'.format(self.production_stage_progress)
 
         self.message += '【活动入口】京喜APP-我的-京喜工厂'
 
