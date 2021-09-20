@@ -788,7 +788,7 @@ class JdFarm:
             await self.click_duck(session)  # 点鸭子任务
             await self.do_ten_water_again(session)  # 再次浇水
             await self.got_water(session)  # 领水滴
-            await self.notify_result(session)  # 结果通知
+            #await self.notify_result(session)  # 结果通知
 
     async def run_help(self):
         """
