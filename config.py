@@ -169,3 +169,6 @@ JD_TRY_FILTER_KEYWORDS = [i.strip() for i in cfg.get('jd_try_filter_keywords', '
 
 # chrome路径
 CHROME_PATH = cfg.get('chrome_path', None)
+
+# 京东超市蓝币兑换物品,选项: 20, 1000, 或者其它商品唯一关键字, 默认20
+BLUE_COIN_EXCHANGE = cfg.get('blue_coin_exchange', 20)
