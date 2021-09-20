@@ -4,7 +4,6 @@
 # @Project      : jd_scripts
 # @Created Date : 2021-09-18 22:30:12
 # @Last Modified: 2021-09-19 21:32:19
-# @Author       : Hootigger
 # @Cron         : 59 23 * * *
 # @Desc         : 京东APP首页->京东超市->游戏  0点兑换物品
 
