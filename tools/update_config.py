@@ -56,7 +56,7 @@ class Config:
         'server_send_key': 'server酱通知key',
         'tg_bot_api': 'TG代理',
         'joy_exchange_num': '宠汪汪兑换京豆数, 选项, 20, 500, 默认20',
-        'blue_coin_exchange': '京东超市蓝币兑换物品,选项: 20, 1000, 或者其它商品唯一关键字, 默认20'
+        'jd_supermarket_exchange': '京东超市蓝币兑换物品,选项: 20, 1000, 或者其它商品唯一关键字, 默认20'
     }
 
     def __init__(self):

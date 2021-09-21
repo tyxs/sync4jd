@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @File         : jd_blue_coin.py
+# @File         : jd_supermarket_exchange.py
 # @Project      : jd_scripts
 # @Created Date : 2021-09-18 22:30:12
 # @Last Modified: 2021-09-19 21:32:19
@@ -19,7 +19,7 @@ from utils.logger import logger
 from jd_supermarket import JdSupermarket
 
 
-class JdBlueCoin(JdSupermarket):
+class JdSupermarketExchange(JdSupermarket):
     """
     京东超时 0点 兑换商品(京豆/其它物品)
     """
@@ -60,7 +60,7 @@ class JdBlueCoin(JdSupermarket):
                 if self.prize:
                     break
             if not self.prize:
-                println(f'{self.account},请检查你要兑换({BLUE_COIN_EXCHANGE})的商品是否存在!')
+                println(f'{self.account},请检查你要兑换({JD_SUPERMARKET_EXCHANGE})的商品是否存在!')
         except Exception as e:
             println('{}, 无法获取商品列表! {} ({})'.format(self.account, e.args, data.get('bizMsg')))
 
@@ -153,11 +153,11 @@ class JdBlueCoin(JdSupermarket):
         println(f'{self.account}, 总共尝试兑换{run_count}次, 成功{success_count}次, 异常{errBizCodeCount}次!')
         if success_count > 0:
             exchange_success_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
-            self.message = f'【活动名称】东东超市蓝币兑换\n【京东账号】{self.account}\n【兑换奖品】{BLUE_COIN_EXCHANGE}\n【兑换状态】成功{success_count}次\n【兑换时间】{exchange_success_datetime}\n'
+            self.message = f'【活动名称】东东超市蓝币兑换\n【京东账号】{self.account}\n【兑换奖品】{JD_SUPERMARKET_EXCHANGE}\n【兑换状态】成功{success_count}次\n【兑换时间】{exchange_success_datetime}\n'
 
     @logger.catch
     async def run(self):
-        if not BLUE_COIN_EXCHANGE:
+        if not JD_SUPERMARKET_EXCHANGE:
             println(f'{self.account}, 你未设置兑换商品,退出执行.')
             return
         async with aiohttp.ClientSession(cookies=self.cookies, headers=self.headers) as session:
@@ -168,13 +168,13 @@ class JdBlueCoin(JdSupermarket):
             # self.totalGold = home_data.get('totalGold',0)
             self.total_blue_coin = home_data.get('totalBlue',0)
             good_name = ''
-            if BLUE_COIN_EXCHANGE == 20:
+            if JD_SUPERMARKET_EXCHANGE == 20:
                 good_name = '万能的京豆'
                 self.buy_limit = 20
-            elif BLUE_COIN_EXCHANGE == 1000:
+            elif JD_SUPERMARKET_EXCHANGE == 1000:
                 good_name = '超值京豆包'
             else:
-                good_name = BLUE_COIN_EXCHANGE
+                good_name = JD_SUPERMARKET_EXCHANGE
             await self.query_price(session,good_name)
             if not self.areaId:
                 return
@@ -186,9 +186,9 @@ class JdBlueCoin(JdSupermarket):
 
 
 if __name__ == '__main__':
-    from config import BLUE_COIN_EXCHANGE
+    from config import JD_SUPERMARKET_EXCHANGE
     # from config import JD_COOKIES
     # app = JdBlueCoin(**JD_COOKIES[0])
     # asyncio.run(app.run())
     from utils.process import process_start
-    process_start(JdBlueCoin, '东东超市蓝币兑换')
+    process_start(JdSupermarketExchange, '东东超市蓝币兑换')

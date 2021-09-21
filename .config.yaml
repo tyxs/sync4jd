@@ -74,4 +74,4 @@ jd_try_filter_keywords: 玉@教程@软件@英语@辅导@培训@表带@皮带@瑜
 chrome_path: /usr/bin/chromium
 
 # 京东超市蓝币兑换物品,选项: 20, 1000, 或者其它商品唯一关键字, 默认20
-blue_coin_exchange: 20
+jd_supermarket_exchange: 20
