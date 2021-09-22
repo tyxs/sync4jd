@@ -130,9 +130,11 @@
 
 
 
+
+
 ## 脚本列表
 
-- **脚本总数: 70**
+- **脚本总数: 71**
 
 |脚本名称|脚本描述|
 |:---:|:---:|
@@ -148,7 +150,6 @@
 |jd_5g_box.py| 京东APP->营业厅->领京豆, 5G盲盒做任务抽奖|
 |jd_5g_box_collect.py|  京东APP->营业厅->领京豆, 5G盲盒每3小时收取信号值|
 |jd_amusement_post.py| 京东APP->签到领豆->边玩边赚->京小鸽游乐寄|
-|jd_bean_change.py| 京豆红包变动通知|
 |jd_bean_home.py| 京东APP->我的->签到领京豆->领额外奖励|
 |jd_bean_indiana.py| 京豆APP首页->领京豆->摇京豆->左上角京豆夺宝|
 |jd_big_winner.py| 京东急速版APP->我的->发财大赢家|
@@ -159,6 +160,7 @@
 |jd_collar_bean.py| 京东APP首页->领京豆->升级赚京豆|
 |jd_crazy_joy.py| 京东APP-签到领豆-疯狂的JOY|
 |jd_cute_pet.py| 京东APP->我的->东东萌宠|
+|jd_dd_world.py| 东东世界|
 |jd_earn.py| 微信小程序->京东赚赚|
 |jd_earn_bean.py| 赚京豆(微信小程序)-赚京豆-签到领京豆|
 |jd_enterprise_gift.py| 京东app->我的->签到领豆->边玩边赚->企有此礼|
@@ -192,6 +194,7 @@
 |jd_super_brand.py| 特务Z|
 |jd_super_interactive_city.py| 超级互动城|
 |jd_supermarket.py| 京东APP首页->京东超市->游戏|
+|jd_supermarket_exchange.py| 京东APP首页->京东超市->游戏  0点兑换物品|
 |jd_unsubscribe.py| 取消商品关注和店铺关注|
 |jd_wishing_pool.py| 京东APP首页->京东众筹->众筹许愿池|
 |jd_women_box.py| 女装盲盒|

@@ -40,9 +40,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #  京东APP->签到领豆->边玩边赚->京小鸽游乐寄
 45 8,15 * * * /scripts/jd_amusement_post.py >> /scripts/logs/jd_amusement_post_`date "+\%Y-\%m-\%d"`.log 2>&1
 
-#  京豆红包变动通知
-15 */8 * * * /scripts/jd_bean_change.py >> /scripts/logs/jd_bean_change_`date "+\%Y-\%m-\%d"`.log 2>&1
-
 #  京东APP->我的->签到领京豆->领额外奖励
 45 0 * * * /scripts/jd_bean_home.py >> /scripts/logs/jd_bean_home_`date "+\%Y-\%m-\%d"`.log 2>&1
 
@@ -66,6 +63,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  京东APP->我的->东东萌宠
 35 6-18/6 * * * /scripts/jd_cute_pet.py >> /scripts/logs/jd_cute_pet_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  东东世界
+2 8,13 * * * /scripts/jd_dd_world.py >> /scripts/logs/jd_dd_world_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  微信小程序->京东赚赚
 10 10 * * * /scripts/jd_earn.py >> /scripts/logs/jd_earn_`date "+\%Y-\%m-\%d"`.log 2>&1
@@ -162,6 +162,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 #  京东APP首页->京东超市->游戏
 7 7,20 * * * /scripts/jd_supermarket.py >> /scripts/logs/jd_supermarket_`date "+\%Y-\%m-\%d"`.log 2>&1
+
+#  京东APP首页->京东超市->游戏  0点兑换物品
+59 23 * * * /scripts/jd_supermarket_exchange.py >> /scripts/logs/jd_supermarket_exchange_`date "+\%Y-\%m-\%d"`.log 2>&1
 
 #  取消商品关注和店铺关注
 50 23 * * * /scripts/jd_unsubscribe.py >> /scripts/logs/jd_unsubscribe_`date "+\%Y-\%m-\%d"`.log 2>&1

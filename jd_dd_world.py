@@ -3,6 +3,7 @@
 # @Time    : 2021/9/22 11:49 上午
 # @File    : jd_dd_world.py
 # @Project : jd_scripts
+# @Cron    : 2 8,13 * * *
 # @Desc    : 东东世界
 import asyncio
 import json
@@ -23,6 +24,7 @@ class JdDdWorld:
     东东世界
     """
 
+    @logger.catch
     async def get_isv_token_key(self):
         """
         获取isv token
@@ -52,6 +54,7 @@ class JdDdWorld:
         except:
             return None
 
+    @logger.catch
     async def get_isv_token(self):
         """
         :param isv_token:
@@ -81,6 +84,7 @@ class JdDdWorld:
         except:
             return None
 
+    @logger.catch
     async def get_access_token(self, isv_token_key, isv_token):
         """
         获取access token
@@ -114,6 +118,7 @@ class JdDdWorld:
         except:
             return None
 
+    @logger.catch
     async def request(self, session, fn, body=''):
         """
         请求数据
@@ -138,6 +143,7 @@ class JdDdWorld:
         except Exception as e:
             println('{}, 请求服务器数据失败, {}'.format(self.account, e.args))
 
+    @logger.catch
     async def get_headers(self):
         """
         获取请求头
@@ -166,6 +172,7 @@ class JdDdWorld:
         }
         return headers
 
+    @logger.catch
     async def do_tasks(self, session):
         """
         做任务
@@ -227,6 +234,7 @@ class JdDdWorld:
         async with aiohttp.ClientSession(headers=headers, cookies=self.cookies) as session:
             await self.do_tasks(session)
 
+    @logger.catch
     async def run_help(self):
         """
         助力入口
