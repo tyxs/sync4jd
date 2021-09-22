@@ -43,7 +43,7 @@ fi
 
 if ! type npm >/dev/null 2>&1; then
   echo "正在安装npm...";
-  apt -y install nodejs;
+  apt -y install npm;
   npm install typescript -g;
   apt clean;
 else
