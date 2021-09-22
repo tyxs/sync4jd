@@ -91,7 +91,7 @@ echo -e "\n" >> /tmp/crontab;
 
 cat $CODE_DIR/conf/crontab.sh >> /tmp/crontab;
 
-export PATH='/scripts'
+alias pyjs='/scripts/pyjs.py'
 
 crontab /tmp/crontab;
 
