@@ -104,7 +104,7 @@ echo -e "\n" >> /tmp/crontab;
 
 cat $CODE_DIR/conf/crontab.sh >> /tmp/crontab;
 
-alias pyjs='/scripts/pyjs.py'
+alias pyjs='/scripts/pyjs.py';
 
 crontab /tmp/crontab;
 
