@@ -1,5 +1,11 @@
 ﻿# python scripts
 
+## python3 学习资源
+
+- [python3 cookbook](https://python3-cookbook.readthedocs.io/zh_CN/latest/preface.html)
+- [awesome-python](https://github.com/jobbole/awesome-python-cn)
+## 环境
+
 - python版本:3.7.*
 
 ### 运行
