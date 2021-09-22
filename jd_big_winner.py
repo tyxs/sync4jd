@@ -161,6 +161,7 @@ class JdBigWinner:
 
             # self.message = '【活动名称】大赢家翻翻乐【京东账号】{}【奖励金额】{}￥【活动入口】' \
             #                 '京东极速版->我的->XX大赢家->翻翻乐!'.format(self.account, data['amount'])
+
             withdraw_data = {  # 提现参数
                 'businessSource': 'GAMBLE',
                 'base': {
