@@ -2,7 +2,7 @@
 
 SHELL=/bin/sh
 
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/scripts
 
 # 定时更新脚本
 40 4,14,23 * * * /bin/docker-entrypoint >> /dev/null  2>&1

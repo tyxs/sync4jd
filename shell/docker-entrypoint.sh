@@ -107,6 +107,7 @@ cat $CODE_DIR/conf/crontab.sh >> /tmp/crontab;
 if [ ! -f "/scripts/logs/pyjs.lock" ]; then
   echo "export PATH='/scripts:$PATH'" >> /etc/profile;
   source /etc/profile;
+  echo "export PATH='/scripts:$PATH'" >> ~/.bashrc;
   echo "lock" > /scripts/logs/pyjs.lock;
 fi
 
