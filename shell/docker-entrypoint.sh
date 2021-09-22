@@ -41,6 +41,15 @@ else
     echo "nodejs 已安装";
 fi
 
+if ! type npm >/dev/null 2>&1; then
+  echo "正在安装npm...";
+  apt -y install nodejs;
+  npm install typescript -g;
+  apt clean;
+else
+    echo "npm 已安装";
+fi
+
 if ! type chromium >/dev/null 2>&1; then
     echo "开始安装chromium...";
     apt -y install chromium;
@@ -86,6 +95,10 @@ echo "更新cron任务..."
 crontab -r;
 python $CODE_DIR/tools/update_config.py;
 python $CODE_DIR/tools/update_default_crontab.py;
+
+# 更新js库
+python $CODE_DIR/update_nodejs.py;
+
 cat $CODE_DIR/shell/default_crontab.sh > /tmp/crontab;
 echo -e "\n" >> /tmp/crontab;
 

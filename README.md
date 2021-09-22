@@ -132,13 +132,16 @@
 
 
 
+
+
 ## 脚本列表
 
-- **脚本总数: 71**
+- **脚本总数: 74**
 
 |脚本名称|脚本描述|
 |:---:|:---:|
 |batch_run.py| 批量运行当前目录下的所有以jd, jr, jx, dj开头的活动脚本。|
+|batch_run_js.py| 批量执行JS脚本|
 |check_cookies.py| 检查cookies是否过期, 过期则发送通知|
 |clean_log.py| 清除日志, 默认保留三天, 可在配置中修改|
 |dj_bean.py| 京东APP->京东到家->签到->所有任务|
@@ -209,3 +212,5 @@
 |jx_pasture.py| 京喜APP->京喜牧场->日常任务|
 |jx_pasture_collect.py| 京喜APP->京喜牧场->定时收金币/割草/投喂小鸡|
 |jx_sign.py| 京喜APP->首页->签到领红包|
+|pyjs.py| 用于执行JS脚本|
+|update_nodejs.py| 集成更新nodejs库|

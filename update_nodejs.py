@@ -3,9 +3,8 @@
 # @Time    : 2021/9/22 3:09 下午
 # @File    : update_nodejs.py
 # @Project : jd_scripts
-# @Desc    : 集成nodejs库
+# @Desc    : 集成更新nodejs库
 import os
-import sys
 from config import BASE_DIR, JS_REPO_LIST
 
 
