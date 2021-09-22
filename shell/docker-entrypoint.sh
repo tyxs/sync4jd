@@ -104,7 +104,11 @@ echo -e "\n" >> /tmp/crontab;
 
 cat $CODE_DIR/conf/crontab.sh >> /tmp/crontab;
 
-alias pyjs='/scripts/pyjs.py';
+if [ ! -f "/scripts/logs/pyjs.lock" ]; then
+  echo "export PATH='/scripts:$PATH'" >> /etc/profile;
+  source /etc/profile;
+  echo "lock" > /scripts/logs/pyjs.lock;
+fi
 
 crontab /tmp/crontab;
 

@@ -1,7 +1,7 @@
-#!python3
+#!/usr/local/bin/python
 # -*- coding: utf-8 -*-
 # @Time    : 2021/9/22 3:55 下午
-# @File    : pyjs.py.py
+# @File    : pyjs.py
 # @Project : jd_scripts
 # @Desc    : 用于执行JS脚本
 import os
