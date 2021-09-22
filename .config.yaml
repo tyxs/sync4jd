@@ -82,17 +82,17 @@ js_repo_list:
 
 # 需要执行的js脚本列表
 js_execute_list:
-  - jd_yili_cow
-  - jd_bookshop
-  - jd_cfd
-  - jd_cfd_hb
-  - jd_cfd_loop
-  - jd_cfd_stock
-  - jd_cfd_withdraw
-  - jd_jin_tie
-  - jd_live
-  - jd_qq_pasture
-  - jd_redPacket
-  - jd_speed_redEnvelope
-  - jd_speed_redpocke
-  - jd_speed_sign
+  - jd_yili_cow.js
+  - jd_bookshop.js
+  - jd_cfd.js
+  - jd_cfd_hb.js
+  - jd_cfd_loop.js
+  - jd_cfd_stock.js
+  - jd_cfd_withdraw.js
+  - jd_jin_tie.js
+  - jd_live.js
+  - jd_qq_pasture.js
+  - jd_redPacket.js
+  - jd_speed_redEnvelope.js
+  - jd_speed_redpocke.js
+  - jd_speed_sign.js

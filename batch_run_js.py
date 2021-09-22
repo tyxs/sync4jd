@@ -22,7 +22,9 @@ def get_scripts():
             if os.path.exists(item):  # 绝对路径
                 script_list.append(item)
             else:  # 相对路径
-                script_path = os.path.join(BASE_DIR, f'{repo_name}/{item}.js')
+                if not item.endswith('.js'):
+                    item += '.js'
+                script_path = os.path.join(BASE_DIR, f'{repo_name}/{item}')
                 if not os.path.exists(script_path):
                     continue
                 script_list.append(script_path)
