@@ -91,6 +91,8 @@ echo -e "\n" >> /tmp/crontab;
 
 cat $CODE_DIR/conf/crontab.sh >> /tmp/crontab;
 
+export PATH='/scripts'
+
 crontab /tmp/crontab;
 
 rm /tmp/crontab;
@@ -100,6 +102,7 @@ echo "重启cron进程...";
 /etc/init.d/cron restart;
 
 echo "######更新脚本执行完毕######";
+
 
 # 保证容器不退出
 tail -f /dev/null;

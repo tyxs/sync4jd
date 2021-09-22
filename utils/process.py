@@ -155,8 +155,8 @@ def process_start(scripts_cls, name='', process_num=None, help=True, code_key=No
         for kwargs in kwargs_list:
             pool.apply_async(start_help, args=(scripts_cls,), kwds=kwargs)
 
-        pool.close()
-        pool.join()  # 等待进程结束
+    pool.close()
+    pool.join()  # 等待进程结束
 
     if notify_message != '':
         title = '\n======📣{}📣======\n'.format(name)

@@ -172,3 +172,10 @@ CHROME_PATH = cfg.get('chrome_path', None)
 
 # 京东超市蓝币兑换物品,选项: 20, 1000, 或者其它商品唯一关键字, 默认20
 JD_SUPERMARKET_EXCHANGE = cfg.get('jd_supermarket_exchange', 20)
+
+# 需要自动更新的JS仓库列表
+JS_REPO_LIST = cfg.get('js_repo_list', [])
+
+# 需要执行的js脚本列表
+JS_EXECUTE_LIST = cfg.get('js_execute_list', [])
+
